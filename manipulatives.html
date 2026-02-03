@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Manipulatives - Colourful Semantics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #29B6F6, #0288D1);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .control-group select {
+            padding: 10px 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            min-width: 250px;
+        }
+
+        .mode-toggle {
+            display: flex;
+            gap: 10px;
+        }
+
+        .mode-btn {
+            padding: 10px 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .mode-btn.active {
+            background: #0ea5e9;
+            color: white;
+            border-color: #0ea5e9;
+        }
+
+        .workspace {
+            padding: 30px;
+            min-height: 600px;
+            position: relative;
+        }
+
+        .workspace-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0288D1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #manipulatives-container {
+            min-height: 500px;
+            border-radius: 16px;
+            border: 2px dashed #cbd5e1;
+            background: #fafafa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #draw-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        #manipulative-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .manipulative {
+            position: absolute;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: grab;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            user-select: none;
+            transition: transform 0.1s;
+        }
+
+        .manipulative:active {
+            cursor: grabbing;
+            transform: scale(1.05);
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .color-swatch.selected {
+            border-color: #0f172a;
+            transform: scale(1.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 30px;
+            padding: 10px 20px;
+            background: #e2e8f0;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: #cbd5e1;
+        }
+
+        .scale-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scale-control input {
+            width: 150px;
+        }
+
+        /* Frayer Model Popup */
+        .frayer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frayer-modal.active {
+            display: flex;
+        }
+
+        .frayer-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .frayer-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .frayer-close:hover {
+            color: #000;
+        }
+
+        .frayer-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0288D1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .frayer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .frayer-box {
+            border: 3px solid #0288D1;
+            border-radius: 12px;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .frayer-box h3 {
+            color: #0288D1;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .frayer-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .frayer-definition {
+            grid-column: 1 / -1;
+            background: #e3f2fd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Sentence Manipulatives</h1>
+            <p>Interactive Colourful Semantics Tool for Whiteboards</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="level-select">Select Level:</label>
+                <select id="level-select"></select>
+            </div>
+
+            <div class="control-group">
+                <label>Mode:</label>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" id="mode-move">Move</button>
+                    <button class="mode-btn" id="mode-color">Color</button>
+                    <button class="mode-btn" id="mode-draw">✏️ Draw</button>
+                    <button class="mode-btn" id="clear-draw">Clear</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Scale:</label>
+                <div class="scale-control">
+                    <input type="range" id="scale-slider" min="0.5" max="2.5" step="0.1" value="1">
+                    <span id="scale-value">1.0x</span>
+                </div>
+            </div>
+
+            <div class="control-group" id="color-palette-container" style="display: none;">
+                <label>Colors:</label>
+                <div class="color-palette" id="color-palette"></div>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <div class="workspace-title" id="workspace-title">Select a level to begin</div>
+            <p style="text-align: center; color: #666; margin-bottom: 15px; font-size: 14px;">
+                💡 <strong>Tip:</strong> Double-click any word to see its Frayer model
+            </p>
+            <div id="manipulatives-container">
+                <canvas id="draw-canvas"></canvas>
+                <div id="manipulative-layer"></div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Teacher Guide</a>
+    </div>
+
+    <!-- Frayer Model Modal -->
+    <div class="frayer-modal" id="frayer-modal">
+        <div class="frayer-content">
+            <button class="frayer-close" id="frayer-close">×</button>
+            <div class="frayer-title" id="frayer-word"></div>
+            <div class="frayer-grid">
+                <div class="frayer-box frayer-definition">
+                    <h3>Definition</h3>
+                    <p id="frayer-definition"></p>
+                </div>
+                <div class="frayer-box">
+                    <h3>Characteristics</h3>
+                    <p id="frayer-characteristics"></p>
+                </div>
+                <div class="frayer-box">
+                    <h3>Examples</h3>
+                    <p id="frayer-examples"></p>
+                </div>
+                <div class="frayer-box">
+                    <h3>Non-Examples</h3>
+                    <p id="frayer-nonexamples"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load levels from JSON file
+        let LEVELS = [];
+        let VOCABULARY = {};
+
+        fetch('levels.json')
+            .then(response => response.json())
+            .then(data => {
+                LEVELS = data;
+                console.log('Loaded', LEVELS.length, 'levels from JSON');
+                initManipulatives();
+            })
+            .catch(error => {
+                console.error('Error loading levels:', error);
+                document.getElementById('workspace-title').textContent = 'Error loading game data';
+            });
+
+        // Load vocabulary for Frayer models
+        fetch('vocabulary.json')
+            .then(response => response.json())
+            .then(data => {
+                VOCABULARY = data;
+                console.log('Loaded vocabulary data');
+            })
+            .catch(error => {
+                console.error('Error loading vocabulary:', error);
+            });
+
+        // Semantic color mapping from the game
+        const SEMANTIC_COLORS = {
+            'WHO': '#FFA500',
+            'WHAT_DOING': '#FFFF00',
+            'WHAT': '#00FF00',
+            'WHERE': '#0000FF',
+            'HOW': '#800080',
+            'WHEN': '#8B4513',
+            'JOINING': '#000000'
+        };
+
+        const PALETTE_COLORS = Object.values(SEMANTIC_COLORS);
+
+        let currentMode = 'move';
+        let selectedColor = PALETTE_COLORS[0];
+        let drawCtx = null;
+        let isDrawing = false;
+
+        const dom = {
+            levelSelect: document.getElementById('level-select'),
+            workspaceTitle: document.getElementById('workspace-title'),
+            manipulativeLayer: document.getElementById('manipulative-layer'),
+            container: document.getElementById('manipulatives-container'),
+            drawCanvas: document.getElementById('draw-canvas'),
+            scaleSlider: document.getElementById('scale-slider'),
+            scaleValue: document.getElementById('scale-value'),
+            colorPalette: document.getElementById('color-palette'),
+            colorPaletteContainer: document.getElementById('color-palette-container'),
+            modeMove: document.getElementById('mode-move'),
+            modeColor: document.getElementById('mode-color'),
+            modeDraw: document.getElementById('mode-draw'),
+            clearDraw: document.getElementById('clear-draw')
+        };
+
+        function getContrastColor(bgColor) {
+            const hex = bgColor.replace('#', '');
+            const r = parseInt(hex.substr(0, 2), 16) / 255;
+            const g = parseInt(hex.substr(2, 2), 16) / 255;
+            const b = parseInt(hex.substr(4, 2), 16) / 255;
+            const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+            return luminance > 0.6 ? '#000000' : '#ffffff';
+        }
+
+        function populateLevelSelect() {
+            if (!LEVELS || !dom.levelSelect) return;
+
+            dom.levelSelect.innerHTML = '<option value="">-- Select a Level --</option>';
+
+            LEVELS.forEach((level, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `Level ${index + 1}: Stage ${level.stage} - ${level.name}`;
+                dom.levelSelect.appendChild(option);
+            });
+        }
+
+        function createManipulatives(levelIndex) {
+            if (!LEVELS || levelIndex === '' || !dom.manipulativeLayer) return;
+
+            const level = LEVELS[parseInt(levelIndex)];
+            if (!level) return;
+
+            dom.manipulativeLayer.innerHTML = '';
+            dom.workspaceTitle.textContent = `Level ${parseInt(levelIndex) + 1}: ${level.name}`;
+
+            const containerWidth = dom.container.clientWidth;
+            const padding = 20;
+            const wordSpacing = 180;
+            const rowHeight = 80;
+            const wordsPerRow = Math.floor((containerWidth - padding * 2) / wordSpacing);
+
+            level.words.forEach((wordObj, index) => {
+                const manipulative = document.createElement('div');
+                manipulative.className = 'manipulative';
+                manipulative.textContent = wordObj.word;
+
+                const bgColor = SEMANTIC_COLORS[wordObj.type] || '#cccccc';
+                manipulative.style.backgroundColor = bgColor;
+                manipulative.style.color = getContrastColor(bgColor);
+                manipulative.dataset.color = bgColor;
+
+                const row = Math.floor(index / wordsPerRow);
+                const col = index % wordsPerRow;
+                manipulative.style.left = `${padding + col * wordSpacing}px`;
+                manipulative.style.top = `${padding + row * rowHeight}px`;
+
+                makeDraggable(manipulative);
+                makeColorable(manipulative);
+
+                dom.manipulativeLayer.appendChild(manipulative);
+            });
+
+            updateCanvasSize();
+        }
+
+        function makeDraggable(element) {
+            let isDragging = false;
+            let offsetX = 0;
+            let offsetY = 0;
+
+            element.addEventListener('mousedown', (e) => {
+                if (currentMode !== 'move') return;
+                isDragging = true;
+                offsetX = e.clientX - parseFloat(element.style.left);
+                offsetY = e.clientY - parseFloat(element.style.top);
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging || currentMode !== 'move') return;
+                element.style.left = `${e.clientX - offsetX}px`;
+                element.style.top = `${e.clientY - offsetY}px`;
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Add double-click for Frayer model
+            element.addEventListener('dblclick', () => {
+                const word = element.textContent.trim();
+                showFrayerModel(word);
+            });
+        }
+
+        function makeColorable(element) {
+            element.addEventListener('click', (e) => {
+                if (currentMode !== 'color') return;
+                element.style.backgroundColor = selectedColor;
+                element.style.color = getContrastColor(selectedColor);
+                element.dataset.color = selectedColor;
+                e.stopPropagation();
+            });
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            dom.modeMove.classList.toggle('active', mode === 'move');
+            dom.modeColor.classList.toggle('active', mode === 'color');
+            dom.modeDraw.classList.toggle('active', mode === 'draw');
+            dom.colorPaletteContainer.style.display = mode === 'color' ? 'block' : 'none';
+            dom.drawCanvas.style.pointerEvents = mode === 'draw' ? 'auto' : 'none';
+        }
+
+        function renderColorPalette() {
+            if (!dom.colorPalette) return;
+            dom.colorPalette.innerHTML = '';
+
+            PALETTE_COLORS.forEach(color => {
+                const swatch = document.createElement('div');
+                swatch.className = 'color-swatch';
+                swatch.style.backgroundColor = color;
+                if (color === selectedColor) {
+                    swatch.classList.add('selected');
+                }
+                swatch.addEventListener('click', () => {
+                    selectedColor = color;
+                    renderColorPalette();
+                });
+                dom.colorPalette.appendChild(swatch);
+            });
+        }
+
+        function updateCanvasSize() {
+            if (!dom.drawCanvas || !dom.container) return;
+            const rect = dom.container.getBoundingClientRect();
+            const scale = window.devicePixelRatio || 1;
+            dom.drawCanvas.width = rect.width * scale;
+            dom.drawCanvas.height = rect.height * scale;
+            dom.drawCanvas.style.width = `${rect.width}px`;
+            dom.drawCanvas.style.height = `${rect.height}px`;
+            if (drawCtx) {
+                drawCtx.setTransform(scale, 0, 0, scale, 0, 0);
+                drawCtx.lineCap = 'round';
+                drawCtx.lineJoin = 'round';
+            }
+        }
+
+        function getCanvasCoords(event) {
+            const rect = dom.drawCanvas.getBoundingClientRect();
+            return {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top
+            };
+        }
+
+        function startDrawing(event) {
+            if (currentMode !== 'draw') return;
+            isDrawing = true;
+            const { x, y } = getCanvasCoords(event);
+            drawCtx.beginPath();
+            drawCtx.moveTo(x, y);
+        }
+
+        function draw(event) {
+            if (!isDrawing || currentMode !== 'draw') return;
+            const { x, y } = getCanvasCoords(event);
+            drawCtx.strokeStyle = selectedColor;
+            drawCtx.lineWidth = 4;
+            drawCtx.lineTo(x, y);
+            drawCtx.stroke();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearCanvas() {
+            if (!drawCtx) return;
+            drawCtx.clearRect(0, 0, dom.drawCanvas.width, dom.drawCanvas.height);
+        }
+
+        function updateScale() {
+            const scale = parseFloat(dom.scaleSlider.value);
+            dom.scaleValue.textContent = `${scale.toFixed(1)}x`;
+            document.querySelectorAll('.manipulative').forEach(el => {
+                el.style.fontSize = `${scale * 20}px`;
+            });
+        }
+
+        // Frayer Model Functions
+        function showFrayerModel(word) {
+            const wordData = VOCABULARY[word] || VOCABULARY[word.toLowerCase()] || VOCABULARY[word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()];
+
+            if (!wordData) {
+                console.log('No vocabulary data for:', word);
+                return;
+            }
+
+            document.getElementById('frayer-word').textContent = wordData.word;
+            document.getElementById('frayer-definition').textContent = wordData.definition;
+            document.getElementById('frayer-characteristics').textContent = wordData.characteristics;
+            document.getElementById('frayer-examples').textContent = wordData.examples;
+            document.getElementById('frayer-nonexamples').textContent = wordData.nonExamples;
+
+            document.getElementById('frayer-modal').classList.add('active');
+        }
+
+        function closeFrayerModel() {
+            document.getElementById('frayer-modal').classList.remove('active');
+        }
+
+        // Event listeners
+        dom.levelSelect.addEventListener('change', (e) => {
+            createManipulatives(e.target.value);
+        });
+
+        dom.modeMove.addEventListener('click', () => setMode('move'));
+        dom.modeColor.addEventListener('click', () => setMode('color'));
+        dom.modeDraw.addEventListener('click', () => setMode('draw'));
+        dom.clearDraw.addEventListener('click', clearCanvas);
+        dom.scaleSlider.addEventListener('input', updateScale);
+
+        // Drawing events
+        dom.drawCanvas.addEventListener('pointerdown', startDrawing);
+        dom.drawCanvas.addEventListener('pointermove', draw);
+        dom.drawCanvas.addEventListener('pointerup', stopDrawing);
+        dom.drawCanvas.addEventListener('pointerleave', stopDrawing);
+
+        // Initialize manipulatives after levels are loaded
+        function initManipulatives() {
+            if (!LEVELS || LEVELS.length === 0) {
+                console.error('No levels loaded');
+                return;
+            }
+            populateLevelSelect();
+            renderColorPalette();
+            setMode('move');
+            updateCanvasSize();
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            drawCtx = dom.drawCanvas.getContext('2d');
+            // initManipulatives will be called after JSON loads
+        });
+
+        // Frayer modal event listeners
+        document.getElementById('frayer-close').addEventListener('click', closeFrayerModel);
+        document.getElementById('frayer-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'frayer-modal') {
+                closeFrayerModel();
+            }
+        });
+
+        window.addEventListener('resize', updateCanvasSize);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ice Maze - Sentence Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+
+<body>
+    <div id="main-wrapper">
+
+
+        <div id="game-container">
+            <div id="start-screen">
+                <h1>Ice Maze Configuration</h1>
+
+                <div class="config-group">
+                    <label for="stage-select">Start Stage:</label>
+                    <select id="stage-select"></select>
+                </div>
+
+                <div class="config-group">
+                    <label>Time Limit:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="time-limit" value="30"> 30s</label>
+                        <label><input type="radio" name="time-limit" value="60"> 60s</label>
+                        <label><input type="radio" name="time-limit" value="120" checked> 2m</label>
+                        <label><input type="radio" name="time-limit" value="-1"> Untimed</label>
+                    </div>
+                    <small style="color: #666;">30s: 3x score + 10s/word | 60s: 2x score + 5s/word | 2m: 1x
+                        score</small>
+                </div>
+
+                <div class="config-group">
+                    <label for="guard-count">Guards: <span id="guard-count-val">0</span></label>
+                    <input type="range" id="guard-count" min="0" max="4" value="0"
+                        oninput="document.getElementById('guard-count-val').innerText = this.value">
+                    <small style="color: #666;">+50 points per guard at game start</small>
+                </div>
+
+                <div class="config-group">
+                    <label for="wall-count">Wall Traps: <span id="wall-count-val">6</span></label>
+                    <input type="range" id="wall-count" min="0" max="10" value="6"
+                        oninput="document.getElementById('wall-count-val').innerText = this.value">
+                    <small style="color: #666;">+30 points per trap at game start</small>
+                </div>
+
+                <div class="config-group">
+                    <label>
+                        <input type="checkbox" id="hints-enabled" checked>
+                        Enable Hints (💡 shows next word)
+                    </label>
+                    <small style="color: #666;">Disable for +100 point bonus</small>
+                </div>
+
+                <button id="btn-start-game">START GAME</button>
+            </div>
+        </div>
+
+        <div id="dashboard">
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <span class="label">SCORE</span>
+                    <span id="score-val" class="value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">LIVES</span>
+                    <span id="lives-val" class="value">5</span>
+                </div>
+            </div>
+
+            <div class="sentence-panel">
+                <div class="label">SENTENCE</div>
+                <div id="sentence-val" class="sentence-text">...</div>
+            </div>
+
+            <div class="timer-panel">
+                <div class="label">TIME LEFT</div>
+                <div class="timer-track">
+                    <div id="timer-bar" class="timer-bar"></div>
+                </div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="d-pad">
+                    <div class="d-row">
+                        <button id="btn-up" class="d-btn">↑</button>
+                    </div>
+                    <div class="d-row">
+                        <button id="btn-left" class="d-btn">←</button>
+                        <button id="btn-down" class="d-btn">↓</button>
+                        <button id="btn-right" class="d-btn">→</button>
+                    </div>
+                </div>
+                <div class="action-pad">
+                    <button id="btn-action" class="action-btn">PICK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/utilities.js"></script>
+    <script src="src/objects/Maze.js"></script>
+    <script src="src/objects/Player.js"></script>
+    <script src="src/objects/CrushingWall.js"></script>
+    <script src="src/objects/Guard.js"></script>
+    <script src="src/scenes/UIScene.js"></script>
+    <script src="src/scenes/GameScene.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>

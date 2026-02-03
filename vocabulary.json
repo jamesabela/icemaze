@@ -1,0 +1,1003 @@
+{
+    "the": {
+        "word": "the",
+        "definition": "A word used before a specific noun",
+        "characteristics": "Does not name or describe",
+        "examples": "the boy, the ball",
+        "nonExamples": "run, quickly"
+    },
+    "a": {
+        "word": "a",
+        "definition": "A word used before a noun",
+        "characteristics": "Used for one item",
+        "examples": "a book, a toy",
+        "nonExamples": "the, eats"
+    },
+    "boy": {
+        "word": "boy",
+        "definition": "A male child",
+        "characteristics": "A person",
+        "examples": "boy, child",
+        "nonExamples": "run, ball"
+    },
+    "girl": {
+        "word": "girl",
+        "definition": "A female child",
+        "characteristics": "A person",
+        "examples": "girl, child",
+        "nonExamples": "jump, park"
+    },
+    "mum": {
+        "word": "mum",
+        "definition": "A female parent",
+        "characteristics": "A family member",
+        "examples": "mum, mother",
+        "nonExamples": "school, eats"
+    },
+    "dad": {
+        "word": "dad",
+        "definition": "A male parent",
+        "characteristics": "A family member",
+        "examples": "dad, father",
+        "nonExamples": "reads, kitchen"
+    },
+    "baby": {
+        "word": "baby",
+        "definition": "A very young child",
+        "characteristics": "A person",
+        "examples": "baby, infant",
+        "nonExamples": "dog, book"
+    },
+    "children": {
+        "word": "children",
+        "definition": "More than one child",
+        "characteristics": "Plural noun",
+        "examples": "children, kids",
+        "nonExamples": "run, eats"
+    },
+    "dog": {
+        "word": "dog",
+        "definition": "An animal",
+        "characteristics": "Can move and eat",
+        "examples": "dog, puppy",
+        "nonExamples": "chair, reads"
+    },
+    "cat": {
+        "word": "cat",
+        "definition": "An animal",
+        "characteristics": "Has fur",
+        "examples": "cat, kitten",
+        "nonExamples": "jump, table"
+    },
+    "teacher": {
+        "word": "teacher",
+        "definition": "A person who teaches",
+        "characteristics": "Works in school",
+        "examples": "teacher, adult",
+        "nonExamples": "runs, ball"
+    },
+    "friend": {
+        "word": "friend",
+        "definition": "A person you like and help",
+        "characteristics": "A social role",
+        "examples": "friend, buddy",
+        "nonExamples": "food, road"
+    },
+    "runs": {
+        "word": "runs",
+        "definition": "Moves quickly using legs",
+        "characteristics": "Action word",
+        "examples": "runs, jogs",
+        "nonExamples": "boy, road"
+    },
+    "eats": {
+        "word": "eats",
+        "definition": "Takes food into the body",
+        "characteristics": "Action word",
+        "examples": "eats, chews",
+        "nonExamples": "ball, home"
+    },
+    "sleeps": {
+        "word": "sleeps",
+        "definition": "Rests with eyes closed",
+        "characteristics": "Action word",
+        "examples": "sleeps, rests",
+        "nonExamples": "car, book"
+    },
+    "jumps": {
+        "word": "jumps",
+        "definition": "Moves off the ground",
+        "characteristics": "Action word",
+        "examples": "jumps, hops",
+        "nonExamples": "garden, milk"
+    },
+    "laughs": {
+        "word": "laughs",
+        "definition": "Makes a happy sound",
+        "characteristics": "Action word",
+        "examples": "laughs, giggles",
+        "nonExamples": "car, house"
+    },
+    "kicks": {
+        "word": "kicks",
+        "definition": "Hits with the foot",
+        "characteristics": "Action word",
+        "examples": "kicks, boots",
+        "nonExamples": "dog, bed"
+    },
+    "chews": {
+        "word": "chews",
+        "definition": "Breaks food with teeth",
+        "characteristics": "Action word",
+        "examples": "chews, bites",
+        "nonExamples": "ball, home"
+    },
+    "reads": {
+        "word": "reads",
+        "definition": "Looks at words",
+        "characteristics": "Action word",
+        "examples": "reads, studies",
+        "nonExamples": "park, milk"
+    },
+    "holds": {
+        "word": "holds",
+        "definition": "Keeps something in hands",
+        "characteristics": "Action word",
+        "examples": "holds, carries",
+        "nonExamples": "quickly, kitchen"
+    },
+    "drinks": {
+        "word": "drinks",
+        "definition": "Swallows liquid",
+        "characteristics": "Action word",
+        "examples": "drinks, sips",
+        "nonExamples": "ball, road"
+    },
+    "cooks": {
+        "word": "cooks",
+        "definition": "Makes food",
+        "characteristics": "Action word",
+        "examples": "cooks, prepares",
+        "nonExamples": "book, park"
+    },
+    "plays": {
+        "word": "plays",
+        "definition": "Takes part in a game",
+        "characteristics": "Action word",
+        "examples": "plays, games",
+        "nonExamples": "kitchen, quietly"
+    },
+    "builds": {
+        "word": "builds",
+        "definition": "Makes something",
+        "characteristics": "Action word",
+        "examples": "builds, creates",
+        "nonExamples": "sleeps, slowly"
+    },
+    "chases": {
+        "word": "chases",
+        "definition": "Runs after something",
+        "characteristics": "Action word",
+        "examples": "chases, follows",
+        "nonExamples": "kitchen, milk"
+    },
+    "paints": {
+        "word": "paints",
+        "definition": "Uses paint",
+        "characteristics": "Action word",
+        "examples": "paints, colours",
+        "nonExamples": "eats, today"
+    },
+    "shops": {
+        "word": "shops",
+        "definition": "Buys things",
+        "characteristics": "Action word",
+        "examples": "shops, buys",
+        "nonExamples": "road, dog"
+    },
+    "fixes": {
+        "word": "fixes",
+        "definition": "Makes something work again",
+        "characteristics": "Action word",
+        "examples": "fixes, repairs",
+        "nonExamples": "eats, softly"
+    },
+    "explains": {
+        "word": "explains",
+        "definition": "Makes something clear",
+        "characteristics": "Action word",
+        "examples": "explains, tells",
+        "nonExamples": "ball, quickly"
+    },
+    "writes": {
+        "word": "writes",
+        "definition": "Makes words on paper",
+        "characteristics": "Action word",
+        "examples": "writes, draws",
+        "nonExamples": "park, slowly"
+    },
+    "helps": {
+        "word": "helps",
+        "definition": "Gives support",
+        "characteristics": "Action word",
+        "examples": "helps, supports",
+        "nonExamples": "car, dinner"
+    },
+    "packs": {
+        "word": "packs",
+        "definition": "Puts items together",
+        "characteristics": "Action word",
+        "examples": "packs, fills",
+        "nonExamples": "road, eats"
+    },
+    "throws": {
+        "word": "throws",
+        "definition": "Sends something through air",
+        "characteristics": "Action word",
+        "examples": "throws, tosses",
+        "nonExamples": "quietly, milk"
+    },
+    "feeds": {
+        "word": "feeds",
+        "definition": "Gives food to",
+        "characteristics": "Action word",
+        "examples": "feeds, gives",
+        "nonExamples": "chair, today"
+    },
+    "checks": {
+        "word": "checks",
+        "definition": "Looks carefully",
+        "characteristics": "Action word",
+        "examples": "checks, inspects",
+        "nonExamples": "ball, night"
+    },
+    "tidies": {
+        "word": "tidies",
+        "definition": "Makes clean",
+        "characteristics": "Action word",
+        "examples": "tidies, cleans",
+        "nonExamples": "dog, quickly"
+    },
+    "tidy": {
+        "word": "tidy",
+        "definition": "Makes clean",
+        "characteristics": "Action word",
+        "examples": "tidy, clean",
+        "nonExamples": "dog, quickly"
+    },
+    "practises": {
+        "word": "practises",
+        "definition": "Trains a skill",
+        "characteristics": "Action word",
+        "examples": "practises, learns",
+        "nonExamples": "ball, sofa"
+    },
+    "performs": {
+        "word": "performs",
+        "definition": "Shows an action or play",
+        "characteristics": "Action word",
+        "examples": "performs, acts",
+        "nonExamples": "car, book"
+    },
+    "perform": {
+        "word": "perform",
+        "definition": "To act or show",
+        "characteristics": "Action word",
+        "examples": "perform, act",
+        "nonExamples": "ball, road"
+    },
+    "plans": {
+        "word": "plans",
+        "definition": "Thinks ahead",
+        "characteristics": "Action word",
+        "examples": "plans, prepares",
+        "nonExamples": "garden, runs"
+    },
+    "teaches": {
+        "word": "teaches",
+        "definition": "Helps someone learn",
+        "characteristics": "Action word",
+        "examples": "teaches, shows",
+        "nonExamples": "ball, eats"
+    },
+    "celebrates": {
+        "word": "celebrates",
+        "definition": "Marks a special event",
+        "characteristics": "Action word",
+        "examples": "celebrates, enjoys",
+        "nonExamples": "bed, quickly"
+    },
+    "celebrate": {
+        "word": "celebrate",
+        "definition": "Marks a special event",
+        "characteristics": "Action word",
+        "examples": "celebrate, enjoy",
+        "nonExamples": "bed, quickly"
+    },
+    "organises": {
+        "word": "organises",
+        "definition": "Puts in order",
+        "characteristics": "Action word",
+        "examples": "organises, sorts",
+        "nonExamples": "milk, sleeps"
+    },
+    "prepares": {
+        "word": "prepares",
+        "definition": "Gets ready",
+        "characteristics": "Action word",
+        "examples": "prepares, makes",
+        "nonExamples": "garden, eats"
+    },
+    "repairs": {
+        "word": "repairs",
+        "definition": "Fixes something",
+        "characteristics": "Action word",
+        "examples": "repairs, fixes",
+        "nonExamples": "reads, milk"
+    },
+    "ball": {
+        "word": "ball",
+        "definition": "A round object",
+        "characteristics": "Can be thrown or kicked",
+        "examples": "ball, football",
+        "nonExamples": "eats, slowly"
+    },
+    "bone": {
+        "word": "bone",
+        "definition": "A hard part of an animal",
+        "characteristics": "Object",
+        "examples": "bone, tooth",
+        "nonExamples": "reads, quietly"
+    },
+    "book": {
+        "word": "book",
+        "definition": "Something you read",
+        "characteristics": "Has pages",
+        "examples": "book, story",
+        "nonExamples": "runs, garden"
+    },
+    "toy": {
+        "word": "toy",
+        "definition": "Something to play with",
+        "characteristics": "Object",
+        "examples": "toy, doll",
+        "nonExamples": "eats, road"
+    },
+    "water": {
+        "word": "water",
+        "definition": "A clear drink",
+        "characteristics": "Liquid",
+        "examples": "water, drink",
+        "nonExamples": "ball, kitchen"
+    },
+    "dinner": {
+        "word": "dinner",
+        "definition": "An evening meal",
+        "characteristics": "Food",
+        "examples": "dinner, meal",
+        "nonExamples": "reads, bed"
+    },
+    "food": {
+        "word": "food",
+        "definition": "Something you eat",
+        "characteristics": "Nourishment",
+        "examples": "food, snack",
+        "nonExamples": "runs, park"
+    },
+    "milk": {
+        "word": "milk",
+        "definition": "A white drink",
+        "characteristics": "Liquid",
+        "examples": "milk, drink",
+        "nonExamples": "ball, bed"
+    },
+    "football": {
+        "word": "football",
+        "definition": "A sport and a ball",
+        "characteristics": "Game",
+        "examples": "football, sport",
+        "nonExamples": "quietly, car"
+    },
+    "tower": {
+        "word": "tower",
+        "definition": "A tall structure",
+        "characteristics": "Built object",
+        "examples": "tower, building",
+        "nonExamples": "eats, night"
+    },
+    "bike": {
+        "word": "bike",
+        "definition": "A two-wheeled vehicle",
+        "characteristics": "Transport",
+        "examples": "bike, bicycle",
+        "nonExamples": "eats, garden"
+    },
+    "car": {
+        "word": "car",
+        "definition": "A road vehicle",
+        "characteristics": "Transport",
+        "examples": "car, van",
+        "nonExamples": "quietly, reads"
+    },
+    "shelf": {
+        "word": "shelf",
+        "definition": "A flat surface for objects",
+        "characteristics": "Furniture",
+        "examples": "shelf, rack",
+        "nonExamples": "eats, ball"
+    },
+    "bag": {
+        "word": "bag",
+        "definition": "Something to carry items",
+        "characteristics": "Object",
+        "examples": "bag, backpack",
+        "nonExamples": "eats, runs"
+    },
+    "picture": {
+        "word": "picture",
+        "definition": "A drawing or image",
+        "characteristics": "Visual object",
+        "examples": "picture, drawing",
+        "nonExamples": "eats, road"
+    },
+    "story": {
+        "word": "story",
+        "definition": "A written tale",
+        "characteristics": "Text",
+        "examples": "story, tale",
+        "nonExamples": "quickly, park"
+    },
+    "idea": {
+        "word": "idea",
+        "definition": "A thought or plan",
+        "characteristics": "Abstract noun",
+        "examples": "idea, thought",
+        "nonExamples": "ball, milk"
+    },
+    "game": {
+        "word": "game",
+        "definition": "An activity for fun",
+        "characteristics": "Activity",
+        "examples": "game, play",
+        "nonExamples": "eats, quietly"
+    },
+    "news": {
+        "word": "news",
+        "definition": "Information about events",
+        "characteristics": "Information",
+        "examples": "news, report",
+        "nonExamples": "ball, park"
+    },
+    "spelling": {
+        "word": "spelling",
+        "definition": "Writing words correctly",
+        "characteristics": "Skill",
+        "examples": "spelling, writing",
+        "nonExamples": "ball, garden"
+    },
+    "dance": {
+        "word": "dance",
+        "definition": "A movement to music",
+        "characteristics": "Activity",
+        "examples": "dance, move",
+        "nonExamples": "book, eats"
+    },
+    "breakfast": {
+        "word": "breakfast",
+        "definition": "Morning meal",
+        "characteristics": "Food",
+        "examples": "breakfast, meal",
+        "nonExamples": "runs, bed"
+    },
+    "birthday": {
+        "word": "birthday",
+        "definition": "Day someone was born",
+        "characteristics": "Event",
+        "examples": "birthday, party",
+        "nonExamples": "runs, quietly"
+    },
+    "play": {
+        "word": "play",
+        "definition": "An activity or drama",
+        "characteristics": "Activity",
+        "examples": "play, drama",
+        "nonExamples": "eats, road"
+    },
+    "garden": {
+        "word": "garden",
+        "definition": "An outdoor space",
+        "characteristics": "Place",
+        "examples": "garden, yard",
+        "nonExamples": "eats, slowly"
+    },
+    "park": {
+        "word": "park",
+        "definition": "A public outdoor area",
+        "characteristics": "Place",
+        "examples": "park, field",
+        "nonExamples": "eats, milk"
+    },
+    "kitchen": {
+        "word": "kitchen",
+        "definition": "A room for cooking",
+        "characteristics": "Place",
+        "examples": "kitchen, room",
+        "nonExamples": "runs, today"
+    },
+    "school": {
+        "word": "school",
+        "definition": "A place to learn",
+        "characteristics": "Place",
+        "examples": "school, class",
+        "nonExamples": "eats, quickly"
+    },
+    "class": {
+        "word": "class",
+        "definition": "A group of learners",
+        "characteristics": "Place/group",
+        "examples": "class, lesson",
+        "nonExamples": "eats, park"
+    },
+    "home": {
+        "word": "home",
+        "definition": "Where you live",
+        "characteristics": "Place",
+        "examples": "home, house",
+        "nonExamples": "eats, reads"
+    },
+    "bed": {
+        "word": "bed",
+        "definition": "Furniture for sleeping",
+        "characteristics": "Place/object",
+        "examples": "bed, mattress",
+        "nonExamples": "runs, park"
+    },
+    "sofa": {
+        "word": "sofa",
+        "definition": "A seat",
+        "characteristics": "Furniture",
+        "examples": "sofa, couch",
+        "nonExamples": "eats, runs"
+    },
+    "road": {
+        "word": "road",
+        "definition": "A surface for vehicles",
+        "characteristics": "Place",
+        "examples": "road, street",
+        "nonExamples": "eats, quietly"
+    },
+    "beach": {
+        "word": "beach",
+        "definition": "Sandy place near sea",
+        "characteristics": "Place",
+        "examples": "beach, coast",
+        "nonExamples": "eats, book"
+    },
+    "playground": {
+        "word": "playground",
+        "definition": "Area for play",
+        "characteristics": "Place",
+        "examples": "playground, yard",
+        "nonExamples": "eats, milk"
+    },
+    "stage": {
+        "word": "stage",
+        "definition": "Place for performance",
+        "characteristics": "Place",
+        "examples": "stage, platform",
+        "nonExamples": "eats, quietly"
+    },
+    "classroom": {
+        "word": "classroom",
+        "definition": "A room for lessons",
+        "characteristics": "Place",
+        "examples": "classroom, room",
+        "nonExamples": "eats, ball"
+    },
+    "market": {
+        "word": "market",
+        "definition": "Place to buy food",
+        "characteristics": "Place",
+        "examples": "market, shop",
+        "nonExamples": "runs, quietly"
+    },
+    "garage": {
+        "word": "garage",
+        "definition": "Place to store vehicles",
+        "characteristics": "Place",
+        "examples": "garage, shed",
+        "nonExamples": "eats, reads"
+    },
+    "in": {
+        "word": "in",
+        "definition": "Shows something is inside",
+        "characteristics": "Preposition",
+        "examples": "in school, in bed",
+        "nonExamples": "run, ball"
+    },
+    "on": {
+        "word": "on",
+        "definition": "Shows contact or position",
+        "characteristics": "Preposition",
+        "examples": "on sofa, on stage",
+        "nonExamples": "eats, dog"
+    },
+    "at": {
+        "word": "at",
+        "definition": "Shows place or time",
+        "characteristics": "Preposition",
+        "examples": "at school, at night",
+        "nonExamples": "run, milk"
+    },
+    "to": {
+        "word": "to",
+        "definition": "Shows direction",
+        "characteristics": "Preposition",
+        "examples": "to class, to home",
+        "nonExamples": "eats, dog"
+    },
+    "for": {
+        "word": "for",
+        "definition": "Shows purpose",
+        "characteristics": "Preposition",
+        "examples": "for food",
+        "nonExamples": "runs, bed"
+    },
+    "of": {
+        "word": "of",
+        "definition": "Shows belonging",
+        "characteristics": "Preposition",
+        "examples": "end of day",
+        "nonExamples": "eats, park"
+    },
+    "before": {
+        "word": "before",
+        "definition": "Shows earlier time",
+        "characteristics": "Time word",
+        "examples": "before school",
+        "nonExamples": "eats, ball"
+    },
+    "after": {
+        "word": "after",
+        "definition": "Shows later time",
+        "characteristics": "Time word",
+        "examples": "after lunch",
+        "nonExamples": "eats, road"
+    },
+    "today": {
+        "word": "today",
+        "definition": "The current day",
+        "characteristics": "Time word",
+        "examples": "today, now",
+        "nonExamples": "ball, park"
+    },
+    "yesterday": {
+        "word": "yesterday",
+        "definition": "The day before today",
+        "characteristics": "Time word",
+        "examples": "yesterday",
+        "nonExamples": "eats, ball"
+    },
+    "morning": {
+        "word": "morning",
+        "definition": "Early part of the day",
+        "characteristics": "Time word",
+        "examples": "morning",
+        "nonExamples": "eats, car"
+    },
+    "night": {
+        "word": "night",
+        "definition": "Late part of the day",
+        "characteristics": "Time word",
+        "examples": "night",
+        "nonExamples": "eats, park"
+    },
+    "evening": {
+        "word": "evening",
+        "definition": "Late day time",
+        "characteristics": "Time word",
+        "examples": "evening",
+        "nonExamples": "eats, road"
+    },
+    "week": {
+        "word": "week",
+        "definition": "Seven days",
+        "characteristics": "Time word",
+        "examples": "week",
+        "nonExamples": "eats, ball"
+    },
+    "weekend": {
+        "word": "weekend",
+        "definition": "Days off work or school",
+        "characteristics": "Time word",
+        "examples": "weekend",
+        "nonExamples": "eats, bed"
+    },
+    "lunch": {
+        "word": "lunch",
+        "definition": "Midday meal",
+        "characteristics": "Time word/food",
+        "examples": "lunch",
+        "nonExamples": "runs, park"
+    },
+    "end": {
+        "word": "end",
+        "definition": "The finish",
+        "characteristics": "Position/time",
+        "examples": "end",
+        "nonExamples": "eats, dog"
+    },
+    "day": {
+        "word": "day",
+        "definition": "A full 24 hours",
+        "characteristics": "Time word",
+        "examples": "day",
+        "nonExamples": "eats, ball"
+    },
+    "term": {
+        "word": "term",
+        "definition": "A school period",
+        "characteristics": "Time word",
+        "examples": "term",
+        "nonExamples": "eats, dog"
+    },
+    "hard": {
+        "word": "hard",
+        "definition": "With strength",
+        "characteristics": "Describing word",
+        "examples": "hard",
+        "nonExamples": "dog, park"
+    },
+    "slowly": {
+        "word": "slowly",
+        "definition": "Not fast",
+        "characteristics": "Describing word",
+        "examples": "slowly",
+        "nonExamples": "dog, ball"
+    },
+    "quickly": {
+        "word": "quickly",
+        "definition": "Fast",
+        "characteristics": "Describing word",
+        "examples": "quickly",
+        "nonExamples": "bed, book"
+    },
+    "quietly": {
+        "word": "quietly",
+        "definition": "With little noise",
+        "characteristics": "Describing word",
+        "examples": "quietly",
+        "nonExamples": "ball, park"
+    },
+    "carefully": {
+        "word": "carefully",
+        "definition": "With care",
+        "characteristics": "Describing word",
+        "examples": "carefully",
+        "nonExamples": "dog, milk"
+    },
+    "gently": {
+        "word": "gently",
+        "definition": "Softly",
+        "characteristics": "Describing word",
+        "examples": "gently",
+        "nonExamples": "car, road"
+    },
+    "happily": {
+        "word": "happily",
+        "definition": "With joy",
+        "characteristics": "Describing word",
+        "examples": "happily",
+        "nonExamples": "dog, milk"
+    },
+    "excitedly": {
+        "word": "excitedly",
+        "definition": "With excitement",
+        "characteristics": "Describing word",
+        "examples": "excitedly",
+        "nonExamples": "dog, milk"
+    },
+    "neatly": {
+        "word": "neatly",
+        "definition": "In a tidy way",
+        "characteristics": "Describing word",
+        "examples": "neatly",
+        "nonExamples": "dog, milk"
+    },
+    "proudly": {
+        "word": "proudly",
+        "definition": "With pride",
+        "characteristics": "Describing word",
+        "examples": "proudly",
+        "nonExamples": "eats, park"
+    },
+    "clearly": {
+        "word": "clearly",
+        "definition": "Easy to understand",
+        "characteristics": "Describing word",
+        "examples": "clearly",
+        "nonExamples": "dog, milk"
+    },
+    "kindly": {
+        "word": "kindly",
+        "definition": "With kindness",
+        "characteristics": "Describing word",
+        "examples": "kindly",
+        "nonExamples": "ball, road"
+    },
+    "patiently": {
+        "word": "patiently",
+        "definition": "Without rushing",
+        "characteristics": "Describing word",
+        "examples": "patiently",
+        "nonExamples": "eats, dog"
+    },
+    "confidently": {
+        "word": "confidently",
+        "definition": "With confidence",
+        "characteristics": "Describing word",
+        "examples": "confidently",
+        "nonExamples": "eats, park"
+    },
+    "together": {
+        "word": "together",
+        "definition": "With others",
+        "characteristics": "Describing word",
+        "examples": "together",
+        "nonExamples": "eats, road"
+    },
+    "every": {
+        "word": "every",
+        "definition": "Each one",
+        "characteristics": "Describing word",
+        "examples": "every day",
+        "nonExamples": "eats, road"
+    },
+    "his": {
+        "word": "his",
+        "definition": "Belonging to him",
+        "characteristics": "Possessive word",
+        "examples": "his book",
+        "nonExamples": "eats, road"
+    },
+    "her": {
+        "word": "her",
+        "definition": "Belonging to her",
+        "characteristics": "Possessive word",
+        "examples": "her bag",
+        "nonExamples": "eats, road"
+    },
+    "this": {
+        "word": "this",
+        "definition": "Refers to something near",
+        "characteristics": "Demonstrative word",
+        "examples": "this morning",
+        "nonExamples": "eats, road"
+    },
+    "lunches": {
+        "word": "lunches",
+        "definition": "More than one lunch",
+        "characteristics": "Plural noun",
+        "examples": "lunches, meals",
+        "nonExamples": "runs, park"
+    },
+    "work": {
+        "word": "work",
+        "definition": "Tasks to do",
+        "characteristics": "Activity/noun",
+        "examples": "work, tasks",
+        "nonExamples": "eats, road"
+    },
+    "room": {
+        "word": "room",
+        "definition": "A space in a building",
+        "characteristics": "Place",
+        "examples": "room, space",
+        "nonExamples": "eats, road"
+    },
+    "break": {
+        "word": "break",
+        "definition": "A rest period",
+        "characteristics": "Time word",
+        "examples": "break, rest",
+        "nonExamples": "eats, road"
+    },
+    "time": {
+        "word": "time",
+        "definition": "A moment or period",
+        "characteristics": "Abstract noun",
+        "examples": "time, moment",
+        "nonExamples": "eats, road"
+    },
+    "trip": {
+        "word": "trip",
+        "definition": "A journey",
+        "characteristics": "Activity/noun",
+        "examples": "trip, journey",
+        "nonExamples": "eats, road"
+    },
+    "maths": {
+        "word": "maths",
+        "definition": "Mathematics subject",
+        "characteristics": "School subject",
+        "examples": "maths, numbers",
+        "nonExamples": "eats, road"
+    },
+    "castle": {
+        "word": "castle",
+        "definition": "A large building",
+        "characteristics": "Structure",
+        "examples": "castle, fort",
+        "nonExamples": "eats, road"
+    },
+    "build": {
+        "word": "build",
+        "definition": "Makes something",
+        "characteristics": "Action word",
+        "examples": "build, create",
+        "nonExamples": "sleeps, slowly"
+    },
+    "draws": {
+        "word": "draws",
+        "definition": "Makes pictures",
+        "characteristics": "Action word",
+        "examples": "draws, sketches",
+        "nonExamples": "eats, road"
+    },
+    "drives": {
+        "word": "drives",
+        "definition": "Controls a vehicle",
+        "characteristics": "Action word",
+        "examples": "drives, steers",
+        "nonExamples": "eats, road"
+    },
+    "cleans": {
+        "word": "cleans",
+        "definition": "Makes something clean",
+        "characteristics": "Action word",
+        "examples": "cleans, washes",
+        "nonExamples": "eats, road"
+    },
+    "house": {
+        "word": "house",
+        "definition": "A building to live in",
+        "characteristics": "Place",
+        "examples": "house, home",
+        "nonExamples": "eats, road"
+    },
+    "afternoon": {
+        "word": "afternoon",
+        "definition": "Time after midday",
+        "characteristics": "Time word",
+        "examples": "afternoon",
+        "nonExamples": "eats, road"
+    },
+    "tonight": {
+        "word": "tonight",
+        "definition": "This evening",
+        "characteristics": "Time word",
+        "examples": "tonight",
+        "nonExamples": "eats, road"
+    },
+    "The": {
+        "word": "The",
+        "definition": "A word used before a specific noun",
+        "characteristics": "Does not name or describe",
+        "examples": "The boy, The ball",
+        "nonExamples": "run, quickly"
+    },
+    "Mum": {
+        "word": "Mum",
+        "definition": "A female parent",
+        "characteristics": "A family member",
+        "examples": "Mum, Mother",
+        "nonExamples": "school, eats"
+    },
+    "Dad": {
+        "word": "Dad",
+        "definition": "A male parent",
+        "characteristics": "A family member",
+        "examples": "Dad, Father",
+        "nonExamples": "reads, kitchen"
+    }
+}

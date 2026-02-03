@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ice Maze - Teacher Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #29B6F6, #0288D1);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #0288D1;
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #29B6F6;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .section ul {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        .section ul ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .start-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #29B6F6, #0288D1);
+            color: white;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(41, 182, 246, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .start-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(41, 182, 246, 0.6);
+        }
+
+        .start-button:active {
+            transform: translateY(-1px);
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 40px 0;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 3px solid #e2e8f0;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo a {
+            color: #0288D1;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-logo a:hover {
+            color: #29B6F6;
+        }
+
+        .footer-notice {
+            font-size: 11px;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❄️ Ice Maze - Sentence Builder</h1>
+            <p>A Colourful Semantics Learning Game</p>
+        </div>
+
+        <div class="content">
+            <!-- Hero Image -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="sentencemaze.png" alt="Ice Maze - Sentence Builder" class="hero-image">
+            </div>
+
+            <!-- Action Buttons - Front and Center -->
+            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap;">
+                <a href="game.html" class="start-button" style="max-width: 300px;">
+                    <span class="emoji">🎮</span> Start Game
+                </a>
+                <a href="manipulatives.html" class="start-button"
+                    style="max-width: 300px; background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                    <span class="emoji">🎨</span> Manipulatives Tool
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <hr class="divider">
+
+            <!-- Instructions and Information Below -->
+            <div class="section">
+                <h2>📚 About This Game</h2>
+                <p>Ice Maze is an educational game designed to help students learn sentence structure through the
+                    <strong>Colourful Semantics</strong> approach. Players navigate a maze, collecting words in the
+                    correct order to build grammatically correct sentences.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>🎨 What is Colourful Semantics?</h2>
+                <p>Colourful Semantics is a teaching method that uses colours to help children understand sentence
+                    structure:</p>
+                <ul>
+                    <li><strong style="color: #FFA500;">WHO</strong> (Orange) - The person or thing doing the action
+                    </li>
+                    <li><strong style="color: #FFFF00; background: #333; padding: 2px 6px; border-radius: 3px;">WHAT
+                            DOING</strong> (Yellow) - The action or verb</li>
+                    <li><strong style="color: #4CAF50;">WHAT</strong> (Green) - The object of the action</li>
+                    <li><strong style="color: #2196F3;">WHERE</strong> (Blue) - The location</li>
+                    <li><strong style="color: #9C27B0;">HOW</strong> (Purple) - The manner or way</li>
+                    <li><strong style="color: #795548;">WHEN</strong> (Brown) - The time</li>
+                    <li><strong>JOINING</strong> (Black) - Connecting words like "the", "a", "in"</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⚙️ Game Configuration Options</h2>
+                <p>Before starting, you can customize the game difficulty:</p>
+                <ul>
+                    <li><strong>Starting Stage:</strong> Choose from 8 progressive stages (1-8)</li>
+                    <li><strong>Time Limit:</strong> Set challenge level
+                        <ul>
+                            <li><span class="highlight">30 seconds</span> - 3.0x score multiplier (+10s per word) 🔥
+                            </li>
+                            <li><span class="highlight">60 seconds</span> - 2.0x score multiplier (+5s per word) ⚡</li>
+                            <li><span class="highlight">2 minutes</span> - 1.0x score multiplier (standard) ⏱️</li>
+                            <li><span class="highlight">Untimed</span> - 0.5x score multiplier (practice mode) 🎯</li>
+                        </ul>
+                    </li>
+                    <li><strong>Guard Count (0-5):</strong> Moving obstacles (+50 points each at start) 👾</li>
+                    <li><strong>Wall Trap Count (0-10):</strong> Crushing walls (+30 points each at start) 🧱</li>
+                    <li><strong>Hints:</strong> Enable/disable lightbulb hints (+100 points if disabled) 💡</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎮 How to Play</h2>
+                <ul>
+                    <li><strong>Desktop:</strong> Use arrow keys or WASD to move</li>
+                    <li><strong>Mobile/Tablet:</strong> Tap directional buttons on screen</li>
+                    <li><strong>Goal:</strong> Collect words in the correct order to build the target sentence</li>
+                    <li><strong>Avoid:</strong> Guards (red) and crushing walls (blue)</li>
+                    <li><strong>Lives:</strong> You start with 5 lives. Wrong word? Back to start, lose 1 life!</li>
+                    <li><strong>Hints:</strong> If enabled, walk over the lightbulb (💡) to see the next word flash
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>� Scoring System</h2>
+                <ul>
+                    <li><strong>Base Points:</strong> 50 points per correct word</li>
+                    <li><strong>Time Bonus:</strong> Extra points for completing quickly</li>
+                    <li><strong>Difficulty Bonuses:</strong>
+                        <ul>
+                            <li>Guards: +50 points each (awarded at start)</li>
+                            <li>Wall Traps: +30 points each (awarded at start)</li>
+                            <li>Hints Disabled: +100 points (awarded at start)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Score Multipliers:</strong> Based on time limit chosen (see above)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>� The 8 Stages</h2>
+                <ul>
+                    <li><strong>Stage 1: Sentence Sparks</strong> - WHO + WHAT DOING (e.g., "The boy runs")</li>
+                    <li><strong>Stage 2: Action Builders</strong> - WHO + WHAT DOING + WHAT (e.g., "The boy kicks the
+                        ball")</li>
+                    <li><strong>Stage 3: Scene Setters</strong> - Add WHERE (e.g., "The boy kicks the ball in the
+                        garden")</li>
+                    <li><strong>Stage 4: Detail Boosters</strong> - Add HOW (e.g., "The boy kicks the ball in the
+                        garden hard")</li>
+                    <li><strong>Stage 5: Time Travellers</strong> - Add WHEN (e.g., "The boy kicks the ball in the
+                        garden hard today")</li>
+                    <li><strong>Stage 6: Story Expanders</strong> - Longer sentences with all elements</li>
+                    <li><strong>Stage 7: Meaning Makers</strong> - Complex sentences with multiple clauses</li>
+                    <li><strong>Stage 8: Confident Communicators</strong> - Advanced sentence structures</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul>
+                    <li>Understanding sentence structure and word order</li>
+                    <li>Recognizing semantic roles of words</li>
+                    <li>Building grammatically correct sentences</li>
+                    <li>Developing reading comprehension skills</li>
+                    <li>Improving vocabulary and language awareness</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>💡 Tips for Teachers</h2>
+                <ul>
+                    <li><strong>Start Simple:</strong> Begin with 0 guards, 0 traps, and hints enabled for new learners
+                    </li>
+                    <li><strong>Gradual Challenge:</strong> Increase difficulty as students master sentence structure
+                    </li>
+                    <li><strong>Time Pressure:</strong> Use shorter time limits for advanced students to build fluency
+                    </li>
+                    <li><strong>Discuss Mistakes:</strong> Use incorrect attempts as teaching moments</li>
+                    <li><strong>Celebrate Success:</strong> Acknowledge progress through the stages</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">
+                Powered by <a href="https://arcticreading.vercel.app/" target="_blank"
+                    rel="noopener noreferrer">LexaEngine™</a>
+            </div>
+            <div class="footer-notice">
+                LexaEngine™ is an unregistered trademark used in connection with language and dictionary software
+                developed by James Abela.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
