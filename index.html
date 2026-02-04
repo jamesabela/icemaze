@@ -161,6 +161,208 @@
             line-height: 1.5;
         }
     </style>
+    <style>
+        /* Carousel Styles */
+        .carousel-scene {
+            width: 440px;
+            height: 320px;
+            margin: 40px auto;
+            perspective: 1400px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotateCarousel 24s infinite linear;
+        }
+
+        .carousel:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-cell {
+            position: absolute;
+            width: 420px;
+            height: 300px;
+            left: 10px;
+            top: 10px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            background: white;
+            border: 4px solid white;
+        }
+
+        .carousel-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* 
+           7 items
+           Angle = 360 / 7 = 51.43 degrees
+           Radius calculation for width 420px:
+           r = (420 / 2) / tan(51.43 / 2) 
+           r = 210 / tan(25.7) = 210 / 0.481 = ~436px
+           We'll use translateZ(450px) for a bit of spacing
+        */
+        .carousel-cell:nth-child(1) {
+            transform: rotateY(0deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(2) {
+            transform: rotateY(51.4deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(3) {
+            transform: rotateY(102.8deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(4) {
+            transform: rotateY(154.2deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(5) {
+            transform: rotateY(205.6deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(6) {
+            transform: rotateY(257.0deg) translateZ(450px);
+        }
+
+        .carousel-cell:nth-child(7) {
+            transform: rotateY(308.4deg) translateZ(450px);
+        }
+
+        @keyframes rotateCarousel {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(-360deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .carousel-scene {
+                width: 300px;
+                height: 220px;
+                perspective: 1000px;
+            }
+
+            .carousel-cell {
+                width: 280px;
+                height: 200px;
+            }
+
+            /* Adjust Z for smaller radius */
+            /* 280px width -> r ~ 290px */
+            .carousel-cell:nth-child(1) {
+                transform: rotateY(0deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(2) {
+                transform: rotateY(51.4deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(3) {
+                transform: rotateY(102.8deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(4) {
+                transform: rotateY(154.2deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(5) {
+                transform: rotateY(205.6deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(6) {
+                transform: rotateY(257.0deg) translateZ(300px);
+            }
+
+            .carousel-cell:nth-child(7) {
+                transform: rotateY(308.4deg) translateZ(300px);
+            }
+        }
+    </style>
+    <style>
+        /* Slideshow Styles */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: #fff;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -171,10 +373,34 @@
         </div>
 
         <div class="content">
-            <!-- Hero Image -->
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="sentencemaze.png" alt="Ice Maze - Sentence Builder" class="hero-image">
+            <!-- Hero Image Slideshow -->
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide1.jpeg" alt="Ice Maze Intro 1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide2.jpeg" alt="Ice Maze Intro 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide3.jpeg" alt="Ice Maze Intro 3">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide4.jpeg" alt="Ice Maze Intro 4">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide5.jpeg" alt="Ice Maze Intro 5">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide6.jpeg" alt="Ice Maze Intro 6">
+                </div>
+                <div class="mySlides fade">
+                    <img src="IceIntro/Slide7.jpeg" alt="Ice Maze Intro 7">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
+            <br>
 
             <!-- Action Buttons - Front and Center -->
             <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap;">
@@ -334,9 +560,44 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        let slideIndex = 1;
+        let slideTimer;
+
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            clearTimeout(slideTimer); // Reset timer on manual interaction
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            // Wrap around
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            // Hide all
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Show current
+            slides[slideIndex - 1].style.display = "block";
+
+            // Auto advance after 5 seconds
+            slideTimer = setTimeout(() => {
+                showSlides(slideIndex += 1);
+            }, 5000);
+        }
+    </script>
     <!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
 </body>
 
 </html>
