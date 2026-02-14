@@ -143,6 +143,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             user-select: none;
             transition: transform 0.1s;
+            touch-action: none;
         }
 
         .manipulative:active {
@@ -487,7 +488,9 @@
             let isDragging = false;
             let offsetX = 0;
             let offsetY = 0;
+            let lastTap = 0; // For double-tap detection
 
+            // Mouse events
             element.addEventListener('mousedown', (e) => {
                 if (currentMode !== 'move') return;
                 isDragging = true;
@@ -505,7 +508,43 @@
                 isDragging = false;
             });
 
-            // Add double-click for Frayer model
+            // Touch events
+            element.addEventListener('touchstart', (e) => {
+                if (currentMode !== 'move') return;
+                // Double tap detection
+                const currentTime = new Date().getTime();
+                const tapLength = currentTime - lastTap;
+                if (tapLength < 300 && tapLength > 0) {
+                    const word = element.textContent.trim();
+                    showFrayerModel(word);
+                    e.preventDefault();
+                    return;
+                }
+                lastTap = currentTime;
+
+                isDragging = true;
+                const touch = e.touches[0];
+                offsetX = touch.clientX - parseFloat(element.style.left);
+                offsetY = touch.clientY - parseFloat(element.style.top);
+                // Prevent scrolling while dragging
+                // Only prevent default if we are actually dragging (to allow scrolling elsewhere if needed? No, on the element we want to drag)
+                // However, if we simply tap, we don't want to prevent default click behavior?
+                // But this is touchstart.
+            }, { passive: false });
+
+            element.addEventListener('touchmove', (e) => {
+                if (!isDragging || currentMode !== 'move') return;
+                const touch = e.touches[0];
+                element.style.left = `${touch.clientX - offsetX}px`;
+                element.style.top = `${touch.clientY - offsetY}px`;
+                e.preventDefault(); // Prevent scrolling
+            }, { passive: false });
+
+            element.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            // Add double-click for Frayer model (Mouse)
             element.addEventListener('dblclick', () => {
                 const word = element.textContent.trim();
                 showFrayerModel(word);
